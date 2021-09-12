@@ -1,0 +1,7 @@
+ARGS
+
+INPUT
+subtract 5 2
+OUTPUT
+3.0
+END

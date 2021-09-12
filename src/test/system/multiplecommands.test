@@ -1,0 +1,9 @@
+ARGS
+
+INPUT
+add 5 10
+subtract 11 131
+OUTPUT
+15.0
+-120.0
+END

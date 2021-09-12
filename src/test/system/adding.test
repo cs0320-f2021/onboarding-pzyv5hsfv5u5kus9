@@ -1,0 +1,7 @@
+ARGS
+
+INPUT
+add 3 5
+OUTPUT
+8.0
+END
