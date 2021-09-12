@@ -1,0 +1,7 @@
+target/
+.mvn-classpath
+.classpath
+.project
+.idea/
+**.DS_Store**
+*.prefs
