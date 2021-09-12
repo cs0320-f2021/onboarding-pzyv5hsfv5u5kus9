@@ -45,7 +45,7 @@ public class MathBotTest {
 
   @Test
   public void testMoreNegativeSubtraction() {
-    MathBot m - new MathBot();
+    MathBot m = new MathBot();
     double o = m.subtract(-5, -1);
     assertEquals( -4, o, 0.01);
   }
