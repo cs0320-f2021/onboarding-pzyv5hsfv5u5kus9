@@ -28,4 +28,18 @@ public class MathBotTest {
   }
 
   // TODO: add more unit tests of your own
+
+  @Test
+  public void testNegativeAddition() {
+    MathBot m = new MathBot();
+    double output = m.add(-1, -2);
+    assertEquals(-3, output, 0.01);
+  }
+
+  @Test
+  public void testNegativeSubtraction() {
+    MathBot m = new MathBot();
+    double output = m.subtract(-1, -2);
+    assertEquals(1, output, 0.01);
+  }
 }

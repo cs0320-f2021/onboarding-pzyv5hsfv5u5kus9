@@ -69,7 +69,37 @@ public final class Main {
           String[] arguments = input.split(" ");
           System.out.println(arguments[0]);
           // TODO: complete your REPL by adding commands for addition "add" and subtraction
-          //  "subtract"
+          int numargs = arguments.length - 1;
+          MathBot computer = new MathBot();
+          switch (arguments[0]) {
+            case "add":
+              if (arguments.length < 2) {
+                System.out.print("ERROR: add expects 2 arguments, only received" + numargs);
+              } else {
+                try {
+                  Double num1 = Double.parseDouble(arguments[1]);
+                  Double num2 = Double.parseDouble(arguments[2]);
+                  System.out.println(computer.add(num1, num2));
+                } catch (Exception e) {
+                  System.out.println("ERROR: Improper input");
+                }
+              }
+            case "subtract":
+              if (arguments.length < 2) {
+                System.out.print("ERROR: subtract expects 2 arguments, only received" + numargs);
+              } else {
+                try {
+                  Double num1 = Double.parseDouble(arguments[1]);
+                  Double num2 = Double.parseDouble(arguments[2]);
+                  System.out.println(computer.subtract(num1, num2));
+                } catch (Exception e) {
+                  System.out.println("ERROR: Improper input");
+                }
+              }
+            default:
+              System.out.print("");
+
+          }
         } catch (Exception e) {
           // e.printStackTrace();
           System.out.println("ERROR: We couldn't process your input");
