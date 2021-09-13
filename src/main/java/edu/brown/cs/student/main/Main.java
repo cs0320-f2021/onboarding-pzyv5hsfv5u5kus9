@@ -85,6 +85,7 @@ public final class Main {
                   System.out.println("ERROR: Improper input");
                 }
               }
+              break;
             case "subtract":
               System.out.println("Passed Subtract case");
               if (arguments.length < 2) {
@@ -98,6 +99,7 @@ public final class Main {
                   System.out.println("ERROR: Improper input");
                 }
               }
+              break;
             default:
               break;
           }
