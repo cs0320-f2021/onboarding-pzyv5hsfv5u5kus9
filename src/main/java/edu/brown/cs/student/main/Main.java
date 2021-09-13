@@ -67,13 +67,11 @@ public final class Main {
         try {
           input = input.trim();
           String[] arguments = input.split(" ");
-          System.out.println(arguments[0]);
           // TODO: complete your REPL by adding commands for addition "add" and subtraction
           int numargs = arguments.length - 1;
           MathBot computer = new MathBot();
           switch (arguments[0]) {
             case "add":
-              System.out.println("Passed Add case");
               if (arguments.length < 2) {
                 System.out.print("ERROR: add expects 2 arguments, only received" + numargs);
               } else {
@@ -87,7 +85,6 @@ public final class Main {
               }
               break;
             case "subtract":
-              System.out.println("Passed Subtract case");
               if (arguments.length < 2) {
                 System.out.print("ERROR: subtract expects 2 arguments, only received" + numargs);
               } else {
