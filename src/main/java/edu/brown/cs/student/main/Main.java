@@ -73,6 +73,7 @@ public final class Main {
           MathBot computer = new MathBot();
           switch (arguments[0]) {
             case "add":
+              System.out.println("Passed Add case");
               if (arguments.length < 2) {
                 System.out.print("ERROR: add expects 2 arguments, only received" + numargs);
               } else {
@@ -85,6 +86,7 @@ public final class Main {
                 }
               }
             case "subtract":
+              System.out.println("Passed Subtract case");
               if (arguments.length < 2) {
                 System.out.print("ERROR: subtract expects 2 arguments, only received" + numargs);
               } else {
