@@ -97,8 +97,7 @@ public final class Main {
                 }
               }
             default:
-              System.out.print("");
-
+              break;
           }
         } catch (Exception e) {
           // e.printStackTrace();
