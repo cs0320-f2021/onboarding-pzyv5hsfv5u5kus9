@@ -1,0 +1,9 @@
+ARGS
+
+INPUT
+subtract -3 4
+subtract 4 -3
+OUTPUT
+-7.0
+7.0
+END
