@@ -28,7 +28,7 @@ public class Stars {
       String l;
       while ((l = buffer.readLine()) != null) {
         String[] star = l.split(",");
-        if (star.length == 5) {
+        if (star.length == 5 && !(star[0].equals("StarID"))) {
           this.dataset.add(Arrays.asList(star));
         } else {
           throw new Exception("ERROR: incorrectly formatted data");
@@ -41,7 +41,7 @@ public class Stars {
 
     for (List<String> star : this.dataset) {
       try {
-        positions.put(star.get(1), new double[] {Double.parseDouble(star.get(2)),
+        this.positions.put(star.get(1), new double[] {Double.parseDouble(star.get(2)),
             Double.parseDouble(star.get(2)),
             Double.parseDouble(star.get(2))});
       } catch (Exception e) {
