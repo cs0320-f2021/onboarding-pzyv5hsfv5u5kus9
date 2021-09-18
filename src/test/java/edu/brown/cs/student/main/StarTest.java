@@ -2,7 +2,8 @@ package edu.brown.cs.student.main;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Test
+import org.junit.Test;
+
 public class StarTest {
 
   @Test
