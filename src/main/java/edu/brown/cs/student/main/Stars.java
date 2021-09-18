@@ -14,6 +14,10 @@ public class Stars {
   private List<List<String>> dataset = new ArrayList<>();
   private HashMap<String, double[]> positions = new HashMap<>();
 
+  public List<List<String>> getDataset() {
+    return dataset;
+  }
+
   /**
    * Reads a csv file and stores it into both dataset and positions.
    * @param file - csv file to read into the database
@@ -108,4 +112,5 @@ public class Stars {
         + Math.pow((a[1] - b[1]), 2)
         + Math.pow((a[2] - b[2]), 2));
   }
+
 }
