@@ -93,7 +93,7 @@ public class Stars {
     };
     distances.sort(comparator);
     for (int i = 0; i < k; i++) {
-      neighbors.add(distances.get(i).get(1).intValue());
+      neighbors.add(distances.get(i).get(0).intValue());
     }
     return neighbors;
   }
