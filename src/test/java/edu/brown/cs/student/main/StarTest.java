@@ -52,7 +52,8 @@ public class StarTest {
     double[] pos = new double[]{0.01, 0.01, 0.01};
     List<Integer> knn = s.getNeighborsFromPosition(1, pos);
     Collections.sort(knn);
-    List<Integer> answer = new ArrayList<>(List.of(0));
+    List<Integer> answer = new ArrayList<>();
+    answer.add(0);
     assertEquals(knn, answer);
   }
 }
