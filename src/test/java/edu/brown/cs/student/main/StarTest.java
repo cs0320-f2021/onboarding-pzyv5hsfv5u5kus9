@@ -30,6 +30,7 @@ public class StarTest {
   public void testGetPosition() {
     Stars s = new Stars();
     s.storeStars("/data/stars/ten-star.csv");
+    System.out.println(s.getPosition("Sol"));
     boolean test = Arrays.equals(new double[]{0.0, 0.0, 0.0}, s.getPosition("Sol"));
     assertTrue(test);
   }
