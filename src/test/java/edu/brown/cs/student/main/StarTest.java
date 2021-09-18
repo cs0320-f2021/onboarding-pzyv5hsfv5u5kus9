@@ -48,7 +48,7 @@ public class StarTest {
   @Test
   public void testKNN1() {
     Stars s = new Stars();
-    s.storeStars("data/stars/one-star.csv");
+    s.storeStars("data/stars/ten-star.csv");
     double[] pos = new double[]{0.01, 0.01, 0.01};
     List<Integer> knn = s.getNeighborsFromPosition(1, pos);
     Collections.sort(knn);
