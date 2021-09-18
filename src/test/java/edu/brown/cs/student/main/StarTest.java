@@ -4,7 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class StarTest {
@@ -43,5 +45,14 @@ public class StarTest {
     assertEquals(0, output.size(),0.0);
   }
 
-
+  @Test
+  public void testKNN1() {
+    Stars s = new Stars();
+    s.storeStars("data/stars/one-star.csv");
+    double[] pos = new double[]{0.01, 0.01, 0.01};
+    List<Integer> knn = s.getNeighborsFromPosition(1, pos);
+    Collections.sort(knn);
+    List<Integer> answer = new ArrayList<>(List.of(0));
+    assertEquals(knn, answer);
+  }
 }
