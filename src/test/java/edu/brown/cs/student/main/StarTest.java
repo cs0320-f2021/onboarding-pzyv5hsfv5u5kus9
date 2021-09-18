@@ -1,8 +1,10 @@
 package edu.brown.cs.student.main;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import java.util.Arrays;
 
 public class StarTest {
 
@@ -28,7 +30,8 @@ public class StarTest {
   public void testGetPosition() {
     Stars s = new Stars();
     s.storeStars("/data/stars/ten-star.csv");
-    assertEquals(new double[]{0.0,0.0,0.0}, s.getPosition("Sol"));
+    boolean test = Arrays.equals(new double[]{0.0, 0.0, 0.0}, s.getPosition("Sol"));
+    assertTrue(test);
   }
 
   @Test
