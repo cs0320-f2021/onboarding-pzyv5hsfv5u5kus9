@@ -54,6 +54,6 @@ public class StarTest {
     Collections.sort(knn);
     List<Integer> answer = new ArrayList<>();
     answer.add(0);
-    assertEquals(knn, answer);
+    assertEquals(answer, knn);
   }
 }
