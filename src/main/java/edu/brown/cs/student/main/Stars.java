@@ -28,7 +28,7 @@ public class Stars {
       String l = buffer.readLine();
       while ((l = buffer.readLine()) != null) {
         String[] star = l.split(",");
-        if (star.length == 5 ) {
+        if (star.length == 5) {
           this.dataset.add(Arrays.asList(star));
         } else {
           throw new Exception("ERROR: incorrectly formatted data");
@@ -76,11 +76,13 @@ public class Stars {
     List<Integer> neighbors = new ArrayList<>();
     List<List<Double>> distances = new ArrayList<>();
     for (List<String> star : this.dataset) {
-      List<Double> pair = new ArrayList<>();
-      pair.add(Double.parseDouble(star.get(0)));
-      double distance = getEuclideanDistance(pos, getPosition(star.get(1)));
-      pair.add(distance);
-      distances.add(pair);
+      if (!Arrays.equals(getPosition(star.get(1)), pos)) {
+        List<Double> pair = new ArrayList<>();
+        pair.add(Double.parseDouble(star.get(0)));
+        double distance = getEuclideanDistance(pos, getPosition(star.get(1)));
+        pair.add(distance);
+        distances.add(pair);
+      }
     }
     Comparator<List<Double>> comparator = (l1, l2) -> {
       if (l1.get(1) > l2.get(1)) {

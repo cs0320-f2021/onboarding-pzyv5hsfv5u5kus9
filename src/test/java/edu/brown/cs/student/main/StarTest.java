@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class StarTest {
 
@@ -35,8 +36,11 @@ public class StarTest {
   }
 
   @Test
-  public void testKNN1() {
-
+  public void testKNN0() {
+    Stars s = new Stars();
+    s.storeStars("data/stars/one-star.csv");
+    List<Integer> output = s.getNeighborsFromStar(0,"Lonely Star");
+    assertEquals(0, output.size(),0.0);
   }
 
 
