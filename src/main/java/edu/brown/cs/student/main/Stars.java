@@ -25,10 +25,10 @@ public class Stars {
   public void storeStars(String file) {
     try {
       BufferedReader buffer = new BufferedReader(new FileReader(file));
-      String l;
+      String l = buffer.readLine();
       while ((l = buffer.readLine()) != null) {
         String[] star = l.split(",");
-        if (star.length == 5 && !(star[0].equals("StarID"))) {
+        if (star.length == 5 ) {
           this.dataset.add(Arrays.asList(star));
         } else {
           throw new Exception("ERROR: incorrectly formatted data");
