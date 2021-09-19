@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -139,7 +140,7 @@ public final class Main {
                   break;
                 default:
                   System.out.println("ERROR: command structure for naive_neighbors,received: "
-                      + arguments.toString());
+                      + Arrays.toString(arguments));
                   break;
               }
               break;
