@@ -38,7 +38,7 @@ public class StarTest {
   }
 
   @Test
-  public void testKNN0() {
+  public void testKNN0() throws Exception {
     Stars s = new Stars();
     s.storeStars("data/stars/one-star.csv");
     List<Integer> output = s.getNeighborsFromStar(0,"Lonely Star");
@@ -80,7 +80,7 @@ public class StarTest {
   }
 
   @Test
-  public void testKNNAlt() {
+  public void testKNNAlt() throws Exception {
     Stars s = new Stars();
     s.storeStars("data/stars/three-star.csv");
     List<Integer> knn = s.getNeighborsFromStar(2, "Star One");
