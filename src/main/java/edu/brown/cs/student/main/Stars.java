@@ -29,7 +29,8 @@ public class Stars {
   public void storeStars(String file) {
     try {
       BufferedReader buffer = new BufferedReader(new FileReader(file));
-      String l = buffer.readLine();
+      buffer.readLine();
+      String l;
       List<List<String>> temp = new ArrayList<>();
       while ((l = buffer.readLine()) != null) {
         String[] star = l.split(",");
@@ -75,6 +76,7 @@ public class Stars {
    */
   public List<Integer> getNeighborsFromPosition(int k, double[] pos) {
     System.out.println("INPUTTED POSITION ARRAY" + Arrays.toString(pos)); //test
+    this.dataset.forEach(System.out::println);
     if (k > dataset.size()) {
       return getNeighborsFromPosition(dataset.size(), pos);
     }
