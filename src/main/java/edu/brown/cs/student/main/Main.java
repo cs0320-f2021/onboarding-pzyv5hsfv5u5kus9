@@ -65,13 +65,12 @@ public final class Main {
     try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
       String input;
       Stars star = new Stars();
+      MathBot computer = new MathBot();
       while ((input = br.readLine()) != null) {
         try {
           input = input.trim();
           String[] arguments = input.split(" ");
           int numArgs = arguments.length - 1;
-          MathBot computer = new MathBot();
-
           switch (arguments[0]) {
             case "add":
               if (numArgs < 2) {
