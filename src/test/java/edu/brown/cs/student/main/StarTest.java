@@ -120,15 +120,15 @@ public class StarTest {
     assertEquals(3, size);
   }
 
-  @Test
-  public void testKNNStars() throws Exception {
-    Stars s = new Stars();
-    s.storeStars("data/stars/ten-star.csv");
-    List<Integer> answer = new ArrayList<>(Arrays.asList(70667,
-        71454,
-        71457,
-        87666,
-        118721));
-    assertEquals(answer, s.getNeighborsFromStar(5, "Sol"));
-  }
+//  @Test
+//  public void testKNNStars() throws Exception {
+//    Stars s = new Stars();
+//    s.storeStars("data/stars/ten-star.csv");
+//    List<Integer> answer = new ArrayList<>(Arrays.asList(70667,
+//        71454,
+//        71457,
+//        87666,
+//        118721));
+//    assertEquals(answer, s.getNeighborsFromStar(5, "Sol"));
+//  }
 }
