@@ -69,6 +69,7 @@ public final class Main {
       while ((input = br.readLine()) != null) {
         try {
           input = input.trim();
+          System.out.println(input);
           String[] arguments = input.split(" ");
           int numArgs = arguments.length - 1;
           switch (arguments[0]) {
