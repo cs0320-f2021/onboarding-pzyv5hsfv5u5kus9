@@ -71,6 +71,7 @@ public final class Main {
           input = input.trim();
           String[] arguments = input.split("\\w+|\"[\\w\\s]*\"");
           int numArgs = arguments.length - 1;
+          System.out.println("ARGUMENT: " + Arrays.toString(arguments));
           System.out.println("ARG COUNT: " + numArgs);     //test
           switch (arguments[0]) {
             case "add":
