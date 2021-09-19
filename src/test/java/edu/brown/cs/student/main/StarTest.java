@@ -92,7 +92,7 @@ public class StarTest {
   public void testStoreStarsOverwrite() {
     Stars s = new Stars();
     s.storeStars("data/stars/three-star.csv");
-    s.storeStars("data/stars/one-star/csv");
+    s.storeStars("data/stars/one-star.csv");
     int size = s.getDataset().size();
     assertEquals(1, size);
   }
