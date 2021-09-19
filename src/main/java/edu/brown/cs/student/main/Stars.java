@@ -2,6 +2,7 @@ package edu.brown.cs.student.main;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -43,7 +44,7 @@ public class Stars {
           throw new Exception("ERROR: incorrectly formatted data");
         }
       }
-      this.dataset = temp;
+      this.dataset = new ArrayList<>(temp);
     } catch (Exception e) {
       e.printStackTrace();
       System.out.println("ERROR: " + e);
