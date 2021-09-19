@@ -57,7 +57,7 @@ public class Stars {
       }
     }
 
-    System.out.println(this.dataset);
+    System.out.println("DATASET: " + this.dataset);
   }
 
   /**
@@ -66,7 +66,6 @@ public class Stars {
    * @return double array of xyz coordinates
    */
   public double[] getPosition(String name) {
-    System.out.println("INPUTTED STAR NAME" + name); //test
     return this.positions.getOrDefault(name, null);
   }
 
@@ -77,7 +76,6 @@ public class Stars {
    * @return list of k star IDs that are closest to position
    */
   public List<Integer> getNeighborsFromPosition(int k, double[] pos) {
-    System.out.println("INPUTTED POSITION ARRAY" + Arrays.toString(pos)); //test
     this.dataset.forEach(System.out::println);
     if (k > dataset.size()) {
       return getNeighborsFromPosition(dataset.size(), pos);
