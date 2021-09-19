@@ -103,6 +103,7 @@ public final class Main {
                 System.out.print("ERROR: stars expect 1 arguments, got 0");
               } else {
                 try {
+                  System.out.println("GOT THROUGH STARS CASE");
                   star.storeStars(arguments[1]);
                   int count = star.getDataset().size();
                   System.out.println("Read " + count + " stars from " + arguments[1]);
