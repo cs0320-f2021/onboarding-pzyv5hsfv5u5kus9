@@ -71,8 +71,8 @@ public final class Main {
           input = input.trim();
           String[] arguments = input.split(" (?=([^\"]*\"[^\"]*\")*[^\"]*$)");
           int numArgs = arguments.length - 1;
-          System.out.println("ARGUMENT: " + Arrays.toString(arguments));
-          System.out.println("ARG COUNT: " + numArgs);     //test
+//          System.out.println("ARGUMENT: " + Arrays.toString(arguments)); //test
+//          System.out.println("ARG COUNT: " + numArgs);     //test
           switch (arguments[0]) {
             case "add":
               if (numArgs < 2) {
