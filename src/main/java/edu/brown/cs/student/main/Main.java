@@ -140,7 +140,7 @@ public final class Main {
                   break;
                 default:
                   System.out.println("ERROR: command structure for naive_neighbors,received: "
-                      + Arrays.toString(arguments));
+                      + Arrays.toString(arguments) + "with length " + arguments.length);
                   break;
               }
               break;
