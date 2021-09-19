@@ -104,8 +104,6 @@ public final class Main {
                 System.out.print("ERROR: stars expect 1 arguments, got 0");
               } else {
                 try {
-                  System.out.println("GOT THROUGH STARS CASE");
-                  System.out.println("\nPATH: " + arguments[1]);
                   star.storeStars(arguments[1]);
                   int count = star.getDataset().size();
                   System.out.println("Read " + count + " stars from " + arguments[1]);
@@ -119,7 +117,6 @@ public final class Main {
               switch (numArgs) {
                 case 2:
                   try {
-                    System.out.println("ARGUMENT INPUT" + Arrays.toString(arguments));
                     int k = Integer.parseInt(arguments[1]);
                     List<Integer> ids = star.getNeighborsFromStar(k, arguments[2]);
                     ids.forEach(System.out::println);
@@ -135,8 +132,6 @@ public final class Main {
                     double y = Double.parseDouble(arguments[3]);
                     double z = Double.parseDouble(arguments[4]);
                     double[] pos = new double[] {x, y, z};
-//                    System.out.println("INPUTTED K: " + k);
-//                    System.out.println("INPUTTED POSITION: " + Arrays.toString(pos));
                     List<Integer> ids = star.getNeighborsFromPosition(k, pos);
                     ids.forEach(System.out::println);
                   } catch (Exception e) {
