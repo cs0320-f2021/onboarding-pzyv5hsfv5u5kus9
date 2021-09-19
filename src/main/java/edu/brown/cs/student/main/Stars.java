@@ -86,12 +86,27 @@ public class Stars {
     for (List<String> star : this.dataset) {
       if (!Arrays.equals(getPosition(star.get(1)), pos)) {
         List<Double> pair = new ArrayList<>();
+        pair.add(Double.parseDouble(star.get(0)));
         double distance = getEuclideanDistance(pos, getPosition(star.get(1)));
         pair.add(distance);
-        pair.add(Double.parseDouble(star.get(0)));
         distances.add(pair);
       }
     }
+
+
+    distances.sort((o1, o2) -> {
+      if (o1.get(1) > o2.get(1)) {
+        return 1;
+      }
+      if (o1.get(1) < o2.get(1)) {
+        return -1;
+      }
+      if (o1.get(1).equals(o2.get(1))) {
+        return 0;
+      }
+      return 0;
+    });
+
     Comparator<List<Double>> comparator = (l1, l2) -> {
       if (l1.get(1) > l2.get(1)) {
         return 1;
@@ -103,7 +118,7 @@ public class Stars {
     System.out.println(distances);
     for (int i = 0; i < k; i++) {
       int id = distances.get(i).get(1).intValue();
-      System.out.print(id);
+      System.out.print("ID: " + id + "\n");
       neighbors.add(id);
     }
     return neighbors;
