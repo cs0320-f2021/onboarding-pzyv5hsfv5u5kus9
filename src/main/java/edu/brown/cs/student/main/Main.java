@@ -122,7 +122,6 @@ public final class Main {
                     List<Integer> ids = star.getNeighborsFromStar(k, arguments[2]);
                     ids.forEach(System.out::println);
                   } catch (Exception e) {
-                    e.printStackTrace();
                     System.out.println("ERROR: " + e);
                   }
                   break;
