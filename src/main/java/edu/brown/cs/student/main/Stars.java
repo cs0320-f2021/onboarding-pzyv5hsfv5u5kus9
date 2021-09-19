@@ -107,9 +107,13 @@ public class Stars {
       }
       return 0;
     });
-    for (int i = 0; i < k; i++) {
-      int id = distances.get(i).get(0).intValue();
-      neighbors.add(id);
+    if (distances.isEmpty()) {
+      return neighbors;
+    } else {
+      for (int i = 0; i < k; i++) {
+        int id = distances.get(i).get(0).intValue();
+        neighbors.add(id);
+      }
     }
     return neighbors;
   }
