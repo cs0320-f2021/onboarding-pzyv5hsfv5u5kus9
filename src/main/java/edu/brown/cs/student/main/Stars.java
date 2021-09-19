@@ -74,7 +74,7 @@ public class Stars {
    * @return list of k star IDs that are closest to position
    */
   public List<Integer> getNeighborsFromPosition(int k, double[] pos) {
-    System.out.println("INPUTTED POSITION ARRAY" + pos); //test
+    System.out.println("INPUTTED POSITION ARRAY" + Arrays.toString(pos)); //test
     if (k > dataset.size()) {
       return getNeighborsFromPosition(dataset.size(), pos);
     }

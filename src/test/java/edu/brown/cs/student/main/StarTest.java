@@ -96,4 +96,12 @@ public class StarTest {
     int size = s.getDataset().size();
     assertEquals(1, size);
   }
+
+  @Test
+  public void testHashMapFill() {
+    Stars s = new Stars();
+    s.storeStars("data/stars/three-star.csv");
+    int size = s.getPositions().size();
+    assertEquals(3, size);
+  }
 }
