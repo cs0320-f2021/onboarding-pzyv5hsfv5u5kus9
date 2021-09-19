@@ -138,8 +138,8 @@ public final class Main {
                   }
                   break;
                 default:
-                  System.out.println("ERROR: incorrect command structure for naive_neighbors, "
-                      + "received: " + arguments.toString());
+                  System.out.println("ERROR: command structure for naive_neighbors,received: "
+                      + arguments.toString());
                   break;
               }
               break;
