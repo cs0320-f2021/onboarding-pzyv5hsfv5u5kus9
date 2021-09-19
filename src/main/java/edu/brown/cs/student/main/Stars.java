@@ -87,7 +87,7 @@ public class Stars {
       if (!Arrays.equals(getPosition(star.get(1)), pos)) {
         List<Double> pair = new ArrayList<>();
         pair.add(Double.parseDouble(star.get(0)));
-        System.out.println("STAR POSITION: " + getPosition(star.get(1)));
+        System.out.println("STAR POSITION: " + getPosition(star.get(1)).toString());
         double distance = getEuclideanDistance(pos, getPosition(star.get(1)));
         pair.add(distance);
         distances.add(pair);
