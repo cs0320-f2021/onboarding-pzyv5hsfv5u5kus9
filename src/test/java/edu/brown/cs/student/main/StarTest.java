@@ -67,4 +67,22 @@ public class StarTest {
     List<Integer> answer = new ArrayList<>(Arrays.asList(1,2,3));
     assertEquals(answer, knn);
   }
+
+  public void testKNN2() {
+    Stars s = new Stars();
+    s.storeStars("data/stars/three-star.csv");
+    double[] pos = new double[]{0.01, 0.01, 0.01};
+    List<Integer> knn = s.getNeighborsFromPosition(2, pos);
+    Collections.sort(knn);
+    List<Integer> answer = new ArrayList<>(Arrays.asList(1,2));
+    assertEquals(answer, knn);
+  }
+
+  public void testKNNAlt() {
+    Stars s = new Stars();
+    s.storeStars("data/stars/three-star.csv");
+    List<Integer> knn = s.getNeighborsFromStar(2, "Star One");
+    List<Integer> answer = new ArrayList<>(Arrays.asList(2,3));
+    assertEquals(answer, knn);
+  }
 }
