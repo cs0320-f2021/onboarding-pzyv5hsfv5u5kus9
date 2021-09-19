@@ -107,7 +107,6 @@ public class Stars {
       }
       return 0;
     });
-    System.out.println(distances);
     for (int i = 0; i < k; i++) {
       int id = distances.get(i).get(0).intValue();
       neighbors.add(id);
