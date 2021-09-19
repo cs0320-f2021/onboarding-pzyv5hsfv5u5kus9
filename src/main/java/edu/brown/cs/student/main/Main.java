@@ -146,6 +146,7 @@ public final class Main {
               }
               break;
             default:
+              System.out.println("ERROR: incorrect command");
               break;
           }
         } catch (Exception e) {
