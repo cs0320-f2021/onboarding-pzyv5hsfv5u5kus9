@@ -44,7 +44,6 @@ public class Stars {
       }
       this.dataset = temp;
     } catch (Exception e) {
-      e.printStackTrace();
       System.out.println("ERROR: " + e);
     }
 
@@ -54,7 +53,6 @@ public class Stars {
             Double.parseDouble(star.get(3)),
             Double.parseDouble(star.get(4))});
       } catch (Exception e) {
-        e.printStackTrace();
         System.out.println("ERROR: star position not a valid number");
       }
     }
