@@ -106,18 +106,9 @@ public class Stars {
       }
       return 0;
     });
-
-    Comparator<List<Double>> comparator = (l1, l2) -> {
-      if (l1.get(1) > l2.get(1)) {
-        return 1;
-      } else {
-        return 0;
-      }
-    };
-    distances.sort(comparator);
     System.out.println(distances);
     for (int i = 0; i < k; i++) {
-      int id = distances.get(i).get(1).intValue();
+      int id = distances.get(i).get(0).intValue();
       System.out.print("ID: " + id + "\n");
       neighbors.add(id);
     }
