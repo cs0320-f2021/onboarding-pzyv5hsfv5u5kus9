@@ -100,6 +100,7 @@ public class Stars {
       }
     };
     distances.sort(comparator);
+    System.out.println(distances);
     for (int i = 0; i < k; i++) {
       neighbors.add(distances.get(i).get(0).intValue());
     }
