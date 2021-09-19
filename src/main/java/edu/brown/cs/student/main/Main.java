@@ -69,7 +69,7 @@ public final class Main {
       while ((input = br.readLine()) != null) {
         try {
           input = input.trim();
-          String[] arguments = input.split("\\w+|\"[\\w\\s]*\"");
+          String[] arguments = input.split(" (?=([^\"]*\"[^\"]*\")*[^\"]*$)");
           int numArgs = arguments.length - 1;
           System.out.println("ARGUMENT: " + Arrays.toString(arguments));
           System.out.println("ARG COUNT: " + numArgs);     //test
