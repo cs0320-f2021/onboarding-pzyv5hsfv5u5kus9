@@ -42,7 +42,15 @@ public class StarTest {
     Stars s = new Stars();
     s.storeStars("data/stars/one-star.csv");
     List<Integer> output = s.getNeighborsFromStar(0,"Lonely Star");
-    assertEquals(0, output.size(),0.0);
+    assertEquals(0, output.size());
+  }
+
+  @Test
+  public void testKNNonemax() {
+    Stars s = new Stars();
+    s.storeStars("data/stars/one-star.csv");
+    List<Integer> output = s.getNeighborsFromPosition(0, new double[] {1.0,-1.0,-1.0});
+    assertEquals(1, output.size());
   }
 
   @Test
