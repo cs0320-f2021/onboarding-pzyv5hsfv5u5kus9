@@ -35,7 +35,6 @@ public class Stars {
           throw new Exception("ERROR: incorrectly formatted data");
         }
       }
-      temp.forEach(System.out::println);
       this.dataset = temp;
     } catch (Exception e) {
       e.printStackTrace();
