@@ -103,7 +103,7 @@ public class Stars {
     for (int i = 0; i < k; i++) {
       neighbors.add(distances.get(i).get(0).intValue());
     }
-    System.out.println("SORTED NEIGHBORS" + neighbors);
+    System.out.println("DATASET: " + getDataset() + "\nSORTED NEIGHBORS " + neighbors);
     return neighbors;
   }
 
