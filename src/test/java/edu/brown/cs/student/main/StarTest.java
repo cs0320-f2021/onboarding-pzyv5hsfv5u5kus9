@@ -68,6 +68,7 @@ public class StarTest {
     assertEquals(answer, knn);
   }
 
+  @Test
   public void testKNN2() {
     Stars s = new Stars();
     s.storeStars("data/stars/three-star.csv");
@@ -78,6 +79,7 @@ public class StarTest {
     assertEquals(answer, knn);
   }
 
+  @Test
   public void testKNNAlt() {
     Stars s = new Stars();
     s.storeStars("data/stars/three-star.csv");
