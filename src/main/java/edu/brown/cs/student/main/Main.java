@@ -112,29 +112,33 @@ public final class Main {
               }
               break;
             case "naive_neighbors":
-              if (numArgs == 2) {
-                try {
-                  int k = Integer.parseInt(arguments[1]);
-                  List<Integer> ids = star.getNeighborsFromStar(k, arguments[2]);
-                  ids.forEach(System.out::println);
-                } catch (Exception e) {
-                  e.printStackTrace();
-                  System.out.println("ERROR: " + e);
-                }
-              }
-              if (numArgs == 4) {
-                try {
-                  int k = Integer.parseInt(arguments[1]);
-                  double x = Double.parseDouble(arguments[2]);
-                  double y = Double.parseDouble(arguments[3]);
-                  double z = Double.parseDouble(arguments[4]);
-                  double[] pos = new double[] {x, y, z};
-                  List<Integer> ids = star.getNeighborsFromPosition(k, pos);
-                  ids.forEach(System.out::println);
-                } catch (Exception e) {
-                  e.printStackTrace();
-                  System.out.println("ERROR: " + e);
-                }
+              switch (numArgs) {
+                case 2:
+                  try {
+                    int k = Integer.parseInt(arguments[1]);
+                    List<Integer> ids = star.getNeighborsFromStar(k, arguments[2]);
+                    ids.forEach(System.out::println);
+                  } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("ERROR: " + e);
+                  }
+                  break;
+                case 4:
+                  try {
+                    int k = Integer.parseInt(arguments[1]);
+                    double x = Double.parseDouble(arguments[2]);
+                    double y = Double.parseDouble(arguments[3]);
+                    double z = Double.parseDouble(arguments[4]);
+                    double[] pos = new double[] {x, y, z};
+                    List<Integer> ids = star.getNeighborsFromPosition(k, pos);
+                    ids.forEach(System.out::println);
+                  } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("ERROR: " + e);
+                  }
+                  break;
+                default:
+                  System.out.println("ERROR: incorrect command structure for naive_neighbors");
               }
               break;
             default:

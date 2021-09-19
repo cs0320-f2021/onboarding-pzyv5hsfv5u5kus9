@@ -87,4 +87,13 @@ public class StarTest {
     List<Integer> answer = new ArrayList<>(Arrays.asList(2,3));
     assertEquals(answer, knn);
   }
+
+  @Test
+  public void testStoreStarsOverwrite() {
+    Stars s = new Stars();
+    s.storeStars("data/stars/three-star.csv");
+    s.storeStars("data/stars/one-star/csv");
+    int size = s.getDataset().size();
+    assertEquals(1, size);
+  }
 }
