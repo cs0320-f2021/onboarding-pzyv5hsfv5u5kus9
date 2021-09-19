@@ -56,4 +56,15 @@ public class StarTest {
     answer.add(0);
     assertEquals(answer, knn);
   }
+
+  @Test
+  public void testKNN() {
+    Stars s = new Stars();
+    s.storeStars("data/stars/three-star.csv");
+    double[] pos = new double[]{0.01, 0.01, 0.01};
+    List<Integer> knn = s.getNeighborsFromPosition(3, pos);
+    Collections.sort(knn);
+    List<Integer> answer = new ArrayList<>(Arrays.asList(1,2,3));
+    assertEquals(answer, knn);
+  }
 }
