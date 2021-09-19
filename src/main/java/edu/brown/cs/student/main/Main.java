@@ -104,6 +104,7 @@ public final class Main {
               } else {
                 try {
                   System.out.println("GOT THROUGH STARS CASE");
+                  System.out.println("\nPATH: " + arguments[1]);
                   star.storeStars(arguments[1]);
                   int count = star.getDataset().size();
                   System.out.println("Read " + count + " stars from " + arguments[1]);
