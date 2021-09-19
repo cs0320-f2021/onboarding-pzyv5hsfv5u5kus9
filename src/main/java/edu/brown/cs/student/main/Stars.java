@@ -102,7 +102,9 @@ public class Stars {
     distances.sort(comparator);
     System.out.println(distances);
     for (int i = 0; i < k; i++) {
-      neighbors.add(distances.get(i).get(1).intValue());
+      int id = distances.get(i).get(1).intValue();
+      System.out.print(id);
+      neighbors.add(id);
     }
     return neighbors;
   }
