@@ -30,6 +30,13 @@ public class StarTest {
   }
 
   @Test
+  public void testStoreStars2() {
+    Stars s = new Stars();
+    s.storeStars("data/stars/one-star.csv");
+    assertEquals(1, s.getDataset().size());
+  }
+
+  @Test
   public void testGetPosition() {
     Stars s = new Stars();
     s.storeStars("data/stars/ten-star.csv");
