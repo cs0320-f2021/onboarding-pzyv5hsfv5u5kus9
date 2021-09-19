@@ -57,7 +57,6 @@ public class Stars {
       }
     }
 
-    System.out.println("DATASET: " + this.dataset);
   }
 
   /**
@@ -78,6 +77,7 @@ public class Stars {
   public List<Integer> getNeighborsFromPosition(int k, double[] pos) {
     this.dataset.forEach(System.out::println);
     if (k > dataset.size()) {
+      System.out.println("DATASET: " + this.dataset);
       return getNeighborsFromPosition(dataset.size(), pos);
     }
     List<Integer> neighbors = new ArrayList<>();
