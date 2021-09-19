@@ -59,7 +59,7 @@ public class Stars {
         System.out.println("ERROR: star position not a valid number");
       }
     }
-
+    System.out.println("FINAL DATASET: " + this.dataset);
   }
 
   /**
