@@ -115,7 +115,7 @@ public class Stars {
    * @return - list of k star IDs that are closest to the given star
    */
   public List<Integer> getNeighborsFromStar(int k, String name) throws Exception {
-
+    name = name.replaceAll("^\"|\"$", "");
     double[] pos = getPosition(name);
     if (pos == null) {
       throw new Exception("star name not in database");
