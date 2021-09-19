@@ -34,6 +34,9 @@ public class Stars {
       List<List<String>> temp = new ArrayList<>();
       while ((l = buffer.readLine()) != null) {
         String[] star = l.split(",");
+        if (star[1].equals("")) {
+          star[1] = star[0] + "_star";
+        }
         if (star.length == 5) {
           temp.add(Arrays.asList(star));
         } else {
