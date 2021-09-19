@@ -34,10 +34,11 @@ public class Stars {
       List<List<String>> temp = new ArrayList<>();
       while ((l = buffer.readLine()) != null) {
         String[] star = l.split(",");
-        System.out.println("STAR: " + star);                     // test
+        System.out.println("STAR: " + Arrays.toString(star));                     // test
         if (star.length == 5) {
           System.out.println("ADDED STAR");                       // test
           temp.add(Arrays.asList(star));
+          System.out.println("UPDATED TEMP: " + temp);
         } else {
           throw new Exception("ERROR: incorrectly formatted data");
         }
