@@ -115,7 +115,7 @@ public final class Main {
               switch (numArgs) {
                 case 2:
                   try {
-                    System.out.println("ARGUMENT INPUT" + arguments);
+                    System.out.println("ARGUMENT INPUT" + arguments.toString());
                     int k = Integer.parseInt(arguments[1]);
                     List<Integer> ids = star.getNeighborsFromStar(k, arguments[2]);
                     ids.forEach(System.out::println);
