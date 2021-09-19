@@ -76,7 +76,6 @@ public class Stars {
    */
   public List<Integer> getNeighborsFromPosition(int k, double[] pos) {
     if (k > dataset.size()) {
-      System.out.println("DATASET: " + this.dataset);
       return getNeighborsFromPosition(dataset.size(), pos);
     }
     List<Integer> neighbors = new ArrayList<>();
@@ -104,6 +103,7 @@ public class Stars {
     for (int i = 0; i < k; i++) {
       neighbors.add(distances.get(i).get(0).intValue());
     }
+    System.out.println("SORTED NEIGHBORS" + neighbors);
     return neighbors;
   }
 
