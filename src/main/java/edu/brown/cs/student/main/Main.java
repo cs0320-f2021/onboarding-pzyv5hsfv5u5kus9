@@ -104,7 +104,7 @@ public final class Main {
                 try {
                   star.storeStars(arguments[1]);
                   int count = star.getDataset().size();
-                  System.out.println("Read" + count + " stars from " + arguments[1]);
+                  System.out.println("Read " + count + " stars from " + arguments[1]);
                 } catch (Exception e) {
                   e.printStackTrace();
                   System.out.println("ERROR: data ingestion error");
