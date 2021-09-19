@@ -50,7 +50,7 @@ public class StarTest {
     Stars s = new Stars();
     s.storeStars("data/stars/one-star.csv");
     List<Integer> output = s.getNeighborsFromPosition(1, new double[] {12.0025, 1.0257, -105.5236});
-    assertEquals(1, output.size());
+    assertEquals( 1, output.get(0), 0.01);
   }
 
   @Test
