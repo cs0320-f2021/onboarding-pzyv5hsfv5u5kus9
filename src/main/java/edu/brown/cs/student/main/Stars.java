@@ -44,7 +44,7 @@ public class Stars {
           throw new Exception("ERROR: incorrectly formatted data");
         }
       }
-      this.dataset = new ArrayList<>(temp);
+      this.dataset = temp;
     } catch (Exception e) {
       e.printStackTrace();
       System.out.println("ERROR: " + e);
