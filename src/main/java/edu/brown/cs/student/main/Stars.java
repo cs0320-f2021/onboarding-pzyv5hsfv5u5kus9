@@ -25,7 +25,7 @@ public class Stars {
   public void storeStars(String file) {
     try {
       BufferedReader buffer = new BufferedReader(new FileReader(file));
-      String l;
+      String l = buffer.readLine();
       List<List<String>> temp = new ArrayList<>();
       while ((l = buffer.readLine()) != null) {
         String[] star = l.split(",");
