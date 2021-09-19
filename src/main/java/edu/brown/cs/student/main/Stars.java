@@ -26,14 +26,16 @@ public class Stars {
     try {
       BufferedReader buffer = new BufferedReader(new FileReader(file));
       String l = buffer.readLine();
+      List<List<String>> temp = new ArrayList<>();
       while ((l = buffer.readLine()) != null) {
         String[] star = l.split(",");
         if (star.length == 5) {
-          this.dataset.add(Arrays.asList(star));
+          temp.add(Arrays.asList(star));
         } else {
           throw new Exception("ERROR: incorrectly formatted data");
         }
       }
+      this.dataset = temp;
     } catch (Exception e) {
       e.printStackTrace();
       System.out.println("ERROR: " + e);
@@ -57,13 +59,7 @@ public class Stars {
    * @return double array of xyz coordinates
    */
   public double[] getPosition(String name) {
-    try {
-      return this.positions.get(name);
-    } catch (Exception e) {
-      e.printStackTrace();
-      System.out.print("ERROR: index key not in positions hashmap");
-    }
-    return null;
+    return this.positions.getOrDefault(name, null);
   }
 
   /**
@@ -73,7 +69,13 @@ public class Stars {
    * @return list of k star IDs that are closest to position
    */
   public List<Integer> getNeighborsFromPosition(int k, double[] pos) {
+    if (k > dataset.size()) {
+      return getNeighborsFromPosition(dataset.size(), pos);
+    }
     List<Integer> neighbors = new ArrayList<>();
+    if (k == 0) {
+      return neighbors;
+    }
     List<List<Double>> distances = new ArrayList<>();
     for (List<String> star : this.dataset) {
       if (!Arrays.equals(getPosition(star.get(1)), pos)) {
@@ -104,9 +106,14 @@ public class Stars {
    * @param name - name of star to search around
    * @return - list of k star IDs that are closest to the given star
    */
-  public List<Integer> getNeighborsFromStar(int k, String name) {
+  public List<Integer> getNeighborsFromStar(int k, String name) throws Exception {
+
     double[] pos = getPosition(name);
-    return getNeighborsFromPosition(k, pos);
+    if (pos == null) {
+      throw new Exception("star name not in database");
+    } else {
+      return getNeighborsFromPosition(k, pos);
+    }
   }
 
   public double getEuclideanDistance(double[] a, double[] b) {
@@ -114,5 +121,4 @@ public class Stars {
         + Math.pow((a[1] - b[1]), 2)
         + Math.pow((a[2] - b[2]), 2));
   }
-
 }

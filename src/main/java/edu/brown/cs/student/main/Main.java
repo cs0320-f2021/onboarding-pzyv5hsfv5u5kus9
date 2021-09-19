@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.List;
 import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
@@ -60,24 +61,23 @@ public final class Main {
       runSparkServer((int) options.valueOf("port"));
     }
 
-    // TODO: Add stars and knn!
     try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
       String input;
       while ((input = br.readLine()) != null) {
         try {
           input = input.trim();
           String[] arguments = input.split(" ");
-          // TODO: complete your REPL by adding commands for addition "add" and subtraction
-          int numargs = arguments.length - 1;
+          int numArgs = arguments.length - 1;
           MathBot computer = new MathBot();
+          Stars star = new Stars();
           switch (arguments[0]) {
             case "add":
-              if (arguments.length < 2) {
-                System.out.print("ERROR: add expects 2 arguments, only received" + numargs);
+              if (numArgs < 2) {
+                System.out.print("ERROR: add expects 2 arguments, only received" + numArgs);
               } else {
                 try {
-                  Double num1 = Double.parseDouble(arguments[1]);
-                  Double num2 = Double.parseDouble(arguments[2]);
+                  double num1 = Double.parseDouble(arguments[1]);
+                  double num2 = Double.parseDouble(arguments[2]);
                   System.out.println(computer.add(num1, num2));
                 } catch (Exception e) {
                   System.out.println("ERROR: Improper input");
@@ -85,19 +85,60 @@ public final class Main {
               }
               break;
             case "subtract":
-              if (arguments.length < 2) {
-                System.out.print("ERROR: subtract expects 2 arguments, only received" + numargs);
+              if (numArgs < 2) {
+                System.out.print("ERROR: subtract expects 2 arguments, only received" + numArgs);
               } else {
                 try {
-                  Double num1 = Double.parseDouble(arguments[1]);
-                  Double num2 = Double.parseDouble(arguments[2]);
+                  double num1 = Double.parseDouble(arguments[1]);
+                  double num2 = Double.parseDouble(arguments[2]);
                   System.out.println(computer.subtract(num1, num2));
                 } catch (Exception e) {
                   System.out.println("ERROR: Improper input");
                 }
               }
               break;
+            case "stars":
+              if (numArgs < 1) {
+                System.out.print("ERROR: stars expect 1 arguments, got 0");
+              } else {
+                try {
+                  star.storeStars(arguments[1]);
+                  int count = star.getDataset().size();
+                  System.out.println("Read" + count + " stars from " + arguments[1]);
+                } catch (Exception e) {
+                  e.printStackTrace();
+                  System.out.println("ERROR: data ingestion error");
+                }
+              }
+              break;
+            case "naive_neighbors":
+              if (numArgs == 2) {
+                try {
+                  int k = Integer.parseInt(arguments[1]);
+                  List<Integer> ids = star.getNeighborsFromStar(k, arguments[2]);
+                  ids.forEach(System.out::println);
+                } catch (Exception e) {
+                  e.printStackTrace();
+                  System.out.println("ERROR: " + e);
+                }
+              }
+              if (numArgs == 4) {
+                try {
+                  int k = Integer.parseInt(arguments[1]);
+                  double x = Double.parseDouble(arguments[2]);
+                  double y = Double.parseDouble(arguments[3]);
+                  double z = Double.parseDouble(arguments[4]);
+                  double[] pos = new double[] {x, y, z};
+                  List<Integer> ids = star.getNeighborsFromPosition(k, pos);
+                  ids.forEach(System.out::println);
+                } catch (Exception e) {
+                  e.printStackTrace();
+                  System.out.println("ERROR: " + e);
+                }
+              }
+              break;
             default:
+              System.out.println("ERROR: incorrect command");
               break;
           }
         } catch (Exception e) {
