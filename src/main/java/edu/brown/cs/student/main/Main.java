@@ -70,7 +70,7 @@ public final class Main {
         try {
           input = input.trim();
           String[] arguments = input.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
-          System.out.println(arguments.toString());
+          System.out.println(arguments);
           int numArgs = arguments.length - 1;
           switch (arguments[0]) {
             case "add":
