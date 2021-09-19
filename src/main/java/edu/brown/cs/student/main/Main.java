@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -115,7 +116,7 @@ public final class Main {
               switch (numArgs) {
                 case 2:
                   try {
-                    System.out.println("ARGUMENT INPUT" + arguments.toString());
+                    System.out.println("ARGUMENT INPUT" + Arrays.toString(arguments));
                     int k = Integer.parseInt(arguments[1]);
                     List<Integer> ids = star.getNeighborsFromStar(k, arguments[2]);
                     ids.forEach(System.out::println);
@@ -132,7 +133,7 @@ public final class Main {
                     double z = Double.parseDouble(arguments[4]);
                     double[] pos = new double[] {x, y, z};
                     System.out.println("INPUTTED K" + k);
-                    System.out.println("INPUTTED POSITION" + pos.toString());
+                    System.out.println("INPUTTED POSITION" + Arrays.toString(pos));
                     List<Integer> ids = star.getNeighborsFromPosition(k, pos);
                     ids.forEach(System.out::println);
                   } catch (Exception e) {
