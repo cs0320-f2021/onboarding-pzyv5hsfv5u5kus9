@@ -15,7 +15,11 @@ public class Stars {
   private HashMap<String, double[]> positions = new HashMap<>();
 
   public List<List<String>> getDataset() {
-    return dataset;
+    return this.dataset;
+  }
+
+  public HashMap<String, double[]> getPositions() {
+    return this.positions;
   }
 
   /**
@@ -43,7 +47,7 @@ public class Stars {
 
     for (List<String> star : this.dataset) {
       try {
-        this.positions.put(star.get(1), new double[] {Double.parseDouble(star.get(2)),
+        this.positions.put(star.get(1), new double[]{Double.parseDouble(star.get(2)),
             Double.parseDouble(star.get(3)),
             Double.parseDouble(star.get(4))});
       } catch (Exception e) {
