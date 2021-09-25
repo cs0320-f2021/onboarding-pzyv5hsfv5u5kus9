@@ -24,7 +24,7 @@ import spark.TemplateViewRoute;
 import spark.template.freemarker.FreeMarkerEngine;
 
 /**
- * The Main class of our project. This is where execution begins.
+ * The Main class of our project. This is where execution begins. FINISHED.
  */
 public final class Main {
 

@@ -9,6 +9,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Test suite for Stars class. FINISHED.
+ */
 public class StarTest {
 
   @Test

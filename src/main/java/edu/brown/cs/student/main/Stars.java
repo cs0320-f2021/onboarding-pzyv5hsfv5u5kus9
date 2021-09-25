@@ -8,7 +8,9 @@ import java.util.HashMap;
 import java.util.List;
 
 
-
+/**
+ * Class for storing/computing/managing stars. FINISHED.
+ */
 public class Stars {
   private List<List<String>> dataset = new ArrayList<>();
   private HashMap<String, double[]> positions = new HashMap<>();
